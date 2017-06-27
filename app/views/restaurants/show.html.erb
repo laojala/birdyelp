@@ -1,24 +1,24 @@
 <div class="row">
   <div class="col-md-3">
-    <%= image_tag @restaurant.image_url%>
+    <%= image_tag @restaurant.image_url %>
 
     <h2>
-    <%= @restaurant.name %>
+      <%= @restaurant.name %>
     </h2>
 
     <p>
-    <strong>Address:</strong>
-    <%= @restaurant.address %>
+      <strong>Address:</strong>
+      <%= @restaurant.address %>
     </p>
 
     <p>
-    <strong>Phone:</strong>
-    <%= @restaurant.phone %>
+      <strong>Phone:</strong>
+      <%= @restaurant.phone %>
     </p>
 
     <p>
-    <strong>Website:</strong>
-    <%= link_to @restaurant.website, @restaurant.website %>
+      <strong>Website:</strong>
+      <%= link_to @restaurant.website, @restaurant.website %>
     </p>
 
     <%= link_to "Write a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
@@ -29,20 +29,19 @@
       <h3>No reviews yet. Be the first to write one!</h3>
     <% else %>
       <% @reviews.each do |review| %>
-        <div class="star-rating" data-score= <%= review.rating %></div>
+        <div class="star-rating" data-score= <%= review.rating %> ></div>
         <p><%= review.comment %></p>
       <% end %>
     <% end %>
-
-    <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |
-    <%= link_to 'Back', restaurants_path, class: "btn btn-link" %>
   </div>
 </div>
 
+<%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |
+<%= link_to 'Back', restaurants_path, class: "btn btn-link" %>
 
 <script>
   $('.star-rating').raty({
-    path: 'https://s3.eu-central-1.amazonaws.com/birdyelp/stars/',
+    path: 'https://s3.amazonaws.com/yelpdemo/stars',
     readOnly: true,
     score: function() {
       return $(this).attr('data-score');
