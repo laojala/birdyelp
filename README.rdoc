@@ -1,5 +1,14 @@
 == README
 
-This is a training project for Ruby on Rails course.
+This is a training project for a Ruby on Rails course.
 
 Application is currently hosted at: https://birdyelp.herokuapp.com/
+
+Project uses:
+
+* Bootstrap
+* Uploading images using Carrierwave: https://github.com/carrierwaveuploader/carrierwave
+* Image Hosting with Amazon S3
+* Devise authentication: https://github.com/plataformatec/devise
+* Raty star rating: https://github.com/wbotelhos/raty
+* Google Maps API
